@@ -15,7 +15,7 @@
  *    limitations under the License.
  */
 
-package com.arrow.next.ui.glidepool.internal;
+package com.arrow.next.ui.glidepool;
 
 import java.util.ArrayList;
 import java.util.HashMap;

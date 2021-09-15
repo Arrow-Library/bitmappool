@@ -15,7 +15,7 @@
  *    limitations under the License.
  */
 
-package com.arrow.next.ui.glidepool.internal;
+package com.arrow.next.ui.glidepool;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;

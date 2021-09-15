@@ -15,27 +15,23 @@
  *    limitations under the License.
  */
 
-package com.arrow.next.ui.glidepool.internal;
+package com.arrow.next.ui.glidepool;
 
 import android.graphics.Bitmap;
 
 /**
  * Created by amitshekhar on 17/06/16.
  */
-public interface BitmapPool {
-
-    int getMaxSize();
-
-    void setSizeMultiplier(float sizeMultiplier);
-
+interface LruPoolStrategy {
     void put(Bitmap bitmap);
 
     Bitmap get(int width, int height, Bitmap.Config config);
 
-    Bitmap getDirty(int width, int height, Bitmap.Config config);
+    Bitmap removeLast();
 
-    void clearMemory();
+    String logBitmap(Bitmap bitmap);
 
-    void trimMemory(int level);
+    String logBitmap(int width, int height, Bitmap.Config config);
+
+    int getSize(Bitmap bitmap);
 }
-

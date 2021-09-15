@@ -15,23 +15,31 @@
  *    limitations under the License.
  */
 
-package com.arrow.next.ui.glidepool.internal;
+package com.arrow.next.ui.glidepool;
 
-import android.graphics.Bitmap;
+import java.util.Queue;
 
 /**
  * Created by amitshekhar on 17/06/16.
  */
-interface LruPoolStrategy {
-    void put(Bitmap bitmap);
+abstract class BaseKeyPool<T extends Poolable> {
+    private static final int MAX_SIZE = 20;
+    private final Queue<T> keyPool = Util.createQueue(MAX_SIZE);
 
-    Bitmap get(int width, int height, Bitmap.Config config);
+    protected T get() {
+        T result = keyPool.poll();
+        if (result == null) {
+            result = create();
+        }
+        return result;
+    }
 
-    Bitmap removeLast();
+    public void offer(T key) {
+        if (keyPool.size() < MAX_SIZE) {
+            keyPool.offer(key);
+        }
+    }
 
-    String logBitmap(Bitmap bitmap);
-
-    String logBitmap(int width, int height, Bitmap.Config config);
-
-    int getSize(Bitmap bitmap);
+    protected abstract T create();
 }
+

@@ -19,9 +19,6 @@ package com.arrow.next.ui.glidepool
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.os.Build
-import com.arrow.next.ui.glidepool.internal.BitmapPool
-import com.arrow.next.ui.glidepool.internal.BitmapPoolAdapter
-import com.arrow.next.ui.glidepool.internal.LruBitmapPool
 
 /**
  * Created by amitshekhar on 17/06/16.

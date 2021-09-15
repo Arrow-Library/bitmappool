@@ -23,8 +23,6 @@ import android.graphics.BitmapFactory.Options
 import android.graphics.Rect
 import android.os.Build
 import android.util.TypedValue
-import com.arrow.next.ui.glidepool.GlideBitmapPool
-import com.arrow.next.ui.glidepool.internal.Util
 import java.io.FileDescriptor
 import java.io.InputStream
 
